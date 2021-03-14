@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ONGC | COMPLAINSITE</title>
+  <link rel="stylesheet" type="text/css" href="./css/setustyle2.css">
+  
+</head>
+<body>
+ 
+    <form class="complain-form" action="insert.php" method="post" enctype="multipart/form-data" >
+    <h1>Complaint</h1>
+    <div class="txtb">
+    <label>NAME:<label>
+    <input type="text" placeholder="name" name="name" Required>
+    </div>
+    <div class="txtb">
+    <label>EMAIL:<label>
+    <input type="text" placeholder="email" name="email" Required>
+    </div>
+    <div class="txtb">
+    <label>CPFNO:<label>
+    <input type="number" placeholder="cpfno" name="cpfno" Required>
+    </div>
+    <div class="txtb">
+    <label>PHONE-NO:<label>
+      <input type="number" placeholder="phoneno" name="phoneno" Required>
+      </div>
+      <div class="txtb">
+      <label>ADDRESS:<label>
+        <input type="text" placeholder="address" name="address" Required>
+        </div>
+    <div class="txtb">
+      <label for="Department">Department:</label>
+      <select name="department" id="department">
+       <option value="department">select department </option>
+       <option  name="it" value="it">it </option>
+       <option value="civil">civil</option>
+       <option value="medical">medical </option>
+       <option value="electrical">electrical </option>
+   </select> 
+  </div>
+
+  <div class="txtb">
+    <label>complain-type:</label>
+     <select name="type" id="type" value="type">
+      <option value="selecttype">select type</option>
+      <option value="office">office</option>
+       <option value="colony">colony</option>
+     </select>
+    </div>
+
+
+    <div class="txtb">
+    <label>COMPLAIN:<label>
+    <textarea name="complain" placeholder="complain" id="" cols="30" rows="10" required></textarea>
+    </div>
+    <div class="txtb">
+    <label>UPLOADFILE:<label>
+    <input type="file" name="file" accept="application/pdf">
+    </div>
+
+    <div class="btn">
+    <input type="submit" name="submit" value="Submit">
+  </div>
+
+    </form>
+     
+</body>
+</html>
+

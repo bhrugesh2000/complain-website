@@ -1,0 +1,55 @@
+body
+{
+    background-image: url(../images/compliantbg2.jpg);
+    background-size: cover;
+}
+
+table
+{
+    width: 85%;
+    max-width: 650PX;
+    background: #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    padding:30px 40px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 20px #000000b3;
+    opacity: 0.8;
+}
+
+td
+{
+    border: 1px solid gray;
+    margin: 8px 0;
+    padding: 12px 18px;
+    border-radius: 8px;
+}
+
+td input
+{
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 18px;
+    margin-top: 6px;
+}
+
+td button
+{
+   
+               background: #9b59b6;
+               color: white;
+               margin-left: 150%;
+               text-transform: uppercase;
+               cursor: pointer;
+               margin-top: 8px;
+               border: blueviolet;
+}
+
+
+

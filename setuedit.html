@@ -1,0 +1,78 @@
+
+<html>
+    <head>
+        <title>admin | edit</title>
+        <link rel="stylesheet" type="text/css" href="./css/adminedit.css">
+    </head>
+    <body>
+    <form action="setedit.php" method="post" name="adminedit-form" enctype="multipart/form-data">
+
+    {
+
+        <tr>
+            <td> name:</td>
+            <td><input type="text" name="name" value="<?PHP echo $row["name"]?>"></td>
+        </tr>
+        <tr>
+            <td> email:</td>
+            <td><input type="text" name="email" value="<?PHP echo $row["email"]?>"></td>
+        </tr>
+        <tr>
+            <td> complain:</td>
+            <td><input type="text" name="complain" value="<?PHP echo $row["complain"]?>"></td>
+        </tr>
+
+        <tr>
+            <td> department:</td>
+            <td><input type="text" name="department" value="<?PHP echo $row["department"]?>"></td>
+        </tr>
+
+        <tr>
+            <td>status</td>
+            <td><input type="text" name="status" value="<?PHP echo $row["status"]?>"></td>       
+         </tr>
+        
+         <tr>
+         <td>remark</td>
+         <td><input type="text" name="remark" value="<?php echo $row["remark"]?>"></td>
+         
+         </tr>
+    
+
+           <tr>
+             <td>adminfile</td>
+             <td><input type="file" name="adminfile_name" value="><?php echo $row["adminfile_name"]?>"></td>
+         </tr>
+    
+
+
+    
+        <tr>
+            <td><input type="submit" value="submit" name="submit"></td>
+        </tr>
+    
+
+    }
+
+
+</form>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
