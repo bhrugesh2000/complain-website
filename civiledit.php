@@ -17,9 +17,36 @@ if(isset($_REQUEST['submit']))
     $department=$_REQUEST["department"];
     $status=$_REQUEST["status"];
     $remark=$_REQUEST["remark"];
+    $to_email ="$email";
+    $subject =' complain Registed';
+    $body ="ur complain regarding. 
+           $complain 
+           is successfully accepted and solved";
+    $headers="From : bhrugeshsetu2000@gmail.com\r\nReply-To: bhrugeshsetu2000@gmail.com";
+    $mail_sent=mail($to_email,$subject,$body,$headers);
+
  
-mysqli_query($conn,"UPDATE testfilecomplain set name='$name',email='$email',complain='$complain',department='$department',status='$status',$remark='$remark' WHERE cpfno='$eid'");
-header('location:civildata.php');
+$insert = mysqli_query($conn,"UPDATE testfilecomplain set name='$name',email='$email',complain='$complain',department='$department',status='$status',remark='$remark' WHERE cpfno='$eid'");
+header('location:civil.html');
+if(!$insert)
+{
+    echo mysqli_error();
+}
+else
+{
+    echo "Records added successfully.";
+    move_uploaded_file($adminfile_tem_loc,$adminfile_store);
+    header('location:civil.html');
+    if($mail_sent == true)
+    {
+       echo "email is successfully sent to $to_email.....";
+    }
+    else
+    {
+       echo "email sending failed";
+    }
+   
+}
 }
 
 ?>

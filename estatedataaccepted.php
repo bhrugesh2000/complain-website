@@ -8,7 +8,7 @@ $con=mysqli_connect('localhost','root','','setu_complain');
 
 
 
-$query=mysqli_query($con,"SELECT * FROM testfilecomplain where department='medical' && status='accepted'");
+$query=mysqli_query($con,"SELECT * FROM testfilecomplain where department='estate' && status='accepted'");
 
 $rowcount=mysqli_num_rows($query);
 
@@ -52,7 +52,7 @@ for($i=1;$i<=$rowcount;$i++)
 <td><?php echo $row["department"]?></td>
 <td><?php echo $row["status"]?></td>
 <td><?php echo $row["remark"]?></td>
-<td><a href="medicaledit.php?eid=<?php echo $row["cpfno"]?>">edit</a></td>
+<td><a href="estateedit.php?eid=<?php echo $row["cpfno"]?>">edit</a></td>
 
 </tr>
 <?php

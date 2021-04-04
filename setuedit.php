@@ -32,6 +32,14 @@ if(isset($_POST['submit']))
     $adminfile_size=$_FILES['adminfile']['size'];
     $adminfile_tem_loc=$_FILES['adminfile']['tmp_name'];
     $adminfile_store="images/".$adminfile_name;
+    $to_email ="$email";
+  $subject =' complain Registed';
+  $body ="ur complain regarding. 
+         $complain 
+         is successfully accepted and solved";
+  $headers="From : bhrugeshsetu2000@gmail.com\r\nReply-To: bhrugeshsetu2000@gmail.com";
+  $mail_sent=mail($to_email,$subject,$body,$headers);
+
 
 
 
@@ -47,6 +55,14 @@ if(isset($_POST['submit']))
         echo "Records added successfully.";
         move_uploaded_file($adminfile_tem_loc,$adminfile_store);
         header('location:setuadmin.php');
+        if($mail_sent == true)
+        {
+           echo "email is successfully sent to $to_email.....";
+        }
+        else
+        {
+           echo "email sending failed";
+        }
        
     }
    

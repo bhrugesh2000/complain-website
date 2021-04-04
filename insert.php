@@ -18,14 +18,26 @@ if(isset($_POST['submit']))
    $file_tem_loc=$_FILES['file']['tmp_name'];
    $file_store="images/".$file_name;
    $department_name=$_POST['department'];
-   $type=$_POST['type'];
+   $type=$_POST['type']; 
+   $category=$_POST['category'];
    $phoneno=$_POST['phoneno'];
    $address=$_POST['address'];
    $status='pending';
+   $to_email ="$email";
+  $subject =' complain Registed';
+  $body ="ur complain regarding. 
+         $category
+         $complain 
+         is successfully submitted";
+  $headers="From : bhrugeshsetu2000@gmail.com\r\nReply-To: bhrugeshsetu2000@gmail.com";
+  $mail_sent=mail($to_email,$subject,$body,$headers);
 
 
 
-    $insert = mysqli_query($db,"INSERT INTO `testfilecomplain`(`name`,`email`,`cpfno`,`complain`,`file`,`department`,`type`,`phoneno`,`address`,`status`) VALUES ('$name','$email','$cpfno','$complain','$file_name','$department_name','$type','$phoneno','$address','$status')");
+
+
+
+    $insert = mysqli_query($db,"INSERT INTO `testfilecomplain`(`name`,`email`,`cpfno`,`complain`,`file`,`department`,`type`,`category`,`phoneno`,`address`,`status`) VALUES ('$name','$email','$cpfno','$complain','$file_name','$department_name','$type','$category','$phoneno','$address','$status')");
    
     if(!$insert)
     {
@@ -35,6 +47,14 @@ if(isset($_POST['submit']))
     {
         echo "Records added successfully.";
         move_uploaded_file($file_tem_loc,$file_store);
+        if($mail_sent == true)
+        {
+           echo "email is successfully sent to $to_email.....";
+        }
+        else
+        {
+           echo "email sending failed";
+        }
        
     }
 }

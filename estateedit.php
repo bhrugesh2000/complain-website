@@ -27,7 +27,7 @@ if(isset($_REQUEST['submit']))
 
  
 $insert = mysqli_query($conn,"UPDATE testfilecomplain set name='$name',email='$email',complain='$complain',department='$department',status='$status',remark='$remark' WHERE cpfno='$eid'");
-header('location:it.html');
+header('location:estate.html');
 if(!$insert)
 {
     echo mysqli_error();
@@ -36,7 +36,7 @@ else
 {
     echo "Records added successfully.";
     move_uploaded_file($adminfile_tem_loc,$adminfile_store);
-    header('location:it.html');
+    header('location:estate.html');
     if($mail_sent == true)
     {
        echo "email is successfully sent to $to_email.....";
@@ -48,7 +48,6 @@ else
    
 }
 }
-
 
 ?>
 <?php
